@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h1 class="text-center">pdxpic</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default" ng-repeat="thing in events | orderBy:'start'">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse{{$index}}">
+              {{thing.title}}
+              <span class="pull-right">{{thing.start | date:'medium'}}</span>
+            </a>
+
+          </h4>
+        </div>
+        <div id="collapse{{$index}}" class="panel-collapse collapse">
+          <div class="panel-body">
+            {{thing.description}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
